@@ -7,8 +7,5 @@ class Branch extends baseController{
     public function index(){
         $this->view("Branch",$this->model->get());
     }
-    
-
-
 }
  ?>

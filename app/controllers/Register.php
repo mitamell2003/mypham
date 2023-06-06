@@ -9,7 +9,8 @@ class Register extends baseController{
             echo '<script>alert("Bạn đã đăng nhập"); location.href="/";</script>';
 
         }else {
-            require_once __DIR__ . "/../views/Register.php";
+            $this->view('Register');
+            # require_once __DIR__ . "/../views/Register.php";
             if(isset($_POST['submit'])){self::checkRegister();}
         }
         

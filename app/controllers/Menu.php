@@ -19,7 +19,7 @@ class Menu extends baseController{
         $start = ($currentPage - 1) * LIMIT_PAGE;
         $previousPage = $currentPage > 1 ? $currentPage - 1 : 1;
         $nextPage = $currentPage < $totalPage ? $currentPage + 1 : $totalPage;
-        $this->view('menu/products', $this->getProducts($start) , $previousPage, $nextPage, $currentPage, $totalPage, $this->model->getCategory());
+        $this->view('Menu/products', $this->getProducts($start) , $previousPage, $nextPage, $currentPage, $totalPage, $this->model->getCategory());
         // $data = [];
         // $data[0] = $this->getProducts($start);
         // $data[1] = $previousPage;
@@ -31,10 +31,10 @@ class Menu extends baseController{
         
     }
     public function details($id){
-        $this->view('menu/details', $this->model->getProduct($id));
+        $this->view('Menu/details', $this->model->getProduct($id));
     }
     public function category($id){
-        $this->view('menu/category', $this->model->getProductByCategory($id), $this->model->getCategory());
+        $this->view('Menu/category', $this->model->getProductByCategory($id), $this->model->getCategory());
         // $data = [];
         // $data[0] = $this->model->getProductByCategory($id);
         // $data[1] = $this->model->getCategory();

@@ -8,7 +8,7 @@ class Order extends baseController{
         if(!isset($_SESSION["user"])){
             echo '<script>location.href="/";</script>';
         }
-        $this->view("Order",$this->model->get());
+        $this->view("Order",$this->model->get($_SESSION["user"]["id"]));
     }
     public function details($id = 0){
         echo "Order - $id";

@@ -1,2 +1,2 @@
-# - DEPLOY WEB
+# DEPLOY WEB
 ## 1. CHẠY Ở MÁY LOCAL

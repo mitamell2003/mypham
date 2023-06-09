@@ -58,3 +58,4 @@ Giải thích:
 - `dockerfile: ./nginx/Dockerfile` : đường dẫn đến file Dockerfile cho nginx
 - `port: "80:80"` : ánh xạ port 80 của máy host với port 80 của container
 - `command: nginx -g "daemon off;"` : chạy lệnh `nginx -g "daemon off;"` khi khởi động container
+- # Build và chạy container

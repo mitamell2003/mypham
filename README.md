@@ -1,2 +1,2 @@
 # - DEPLOY WEB
-- [Deploy Web](#deploy-web)
+## CHẠY Ở MÁY LOCAL

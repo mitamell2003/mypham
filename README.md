@@ -59,3 +59,21 @@ Giải thích:
 - `port: "80:80"` : ánh xạ port 80 của máy host với port 80 của container
 - `command: nginx -g "daemon off;"` : chạy lệnh `nginx -g "daemon off;"` khi khởi động container
 - # Build và chạy container
+```sh
+docker-compose build
+```
+```sh
+docker-compose up -d
+```
+Giải thích:
+- `docker-compose build` : build image từ Dockerfile
+- `docker-compose up -d` : chạy container `-d` : chạy ở chế độ detach
+- Kiểm tra đã chạy hay chưa
+```sh
+docker ps
+```
+- Kết quả
+```sh
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                NAMES
+b3b0b0b3b3b3        web_php             "docker-php-entrypoi…"   2 minutes ago       Up 2 minutes        9000/tcp             web_php
+```

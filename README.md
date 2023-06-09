@@ -75,7 +75,7 @@ docker ps
 - Kết quả
 ```sh
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                NAMES
-b3b0b0b3b3b3        web_php             "docker-php-entrypoi…"   2 minutes ago       Up 2 minutes        9000/tcp             web_php
+b3b0b0b3b3b3        web_php             "docker-php-entrypoi…"   2 minutes ago       Up 2 minutes        80:80             web_php
 ```
 ## 2. PUSH IMAGE LÊN DOCKER HUB
 - Đăng nhập vào docker hub

@@ -60,14 +60,14 @@ Giải thích:
 - `command: nginx -g "daemon off;"` : chạy lệnh `nginx -g "daemon off;"` khi khởi động container
 - # Build và chạy container
 ```sh
-docker-compose build
+docker compose build
 ```
 ```sh
-docker-compose up -d
+docker compose up -d
 ```
 Giải thích:
-- `docker-compose build` : build image từ Dockerfile
-- `docker-compose up -d` : chạy container `-d` : chạy ở chế độ detach
+- `docker compose build` : build image từ Dockerfile
+- `docker compose up -d` : chạy container `-d` : chạy ở chế độ detach
 - Kiểm tra đã chạy hay chưa
 ```sh
 docker ps
@@ -77,3 +77,59 @@ docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                NAMES
 b3b0b0b3b3b3        web_php             "docker-php-entrypoi…"   2 minutes ago       Up 2 minutes        9000/tcp             web_php
 ```
+## 2. PUSH IMAGE LÊN DOCKER HUB
+- Đăng nhập vào docker hub
+```sh
+docker login
+```
+- Đổi tên image
+```sh
+docker tag <image>:<tag> <username>/<repositories>:<tag>
+```
+- Push image lên docker hub
+```sh
+docker push <username>/<image_name>:<tag>
+```
+## 3. CHẠY TRÊN EC2
+- Tạo 2 file Dockerfile cho php và nginx
+```sh
+FROM <username>/<repositories>:<tag>
+```
+- Tạo file docker-compose.yml
+```sh
+version: '3.3'
+services:
+  nginx:
+    container_name: webserver_nginx
+    build: 
+      context: .
+      dockerfile: ./nginx/Dockerfile
+    command: nginx -g "daemon off;"
+    ports:
+      - "80:80"
+    networks:
+      - web
+   
+      
+  php:
+    container_name: web_php
+    build: 
+      context: .
+      dockerfile: ./php/Dockerfile
+    working_dir: /var/www/html
+    networks:
+      - web
+   
+    
+networks:
+  web:
+    driver: bridge
+```
+- Chạy docker-compose
+```sh
+docker-compose build
+```
+```sh
+docker-compose up -d
+```
+# Success

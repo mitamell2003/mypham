@@ -78,7 +78,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 b3b0b0b3b3b3        web_php             "docker-php-entrypoi…"   2 minutes ago       Up 2 minutes        80:80             web_php
 ```
 ## 2. PUSH IMAGE LÊN DOCKER HUB
-- Đăng nhập vào docker hub
+- Đăng nhập vào tài khoản docker
 ```sh
 docker login
 ```

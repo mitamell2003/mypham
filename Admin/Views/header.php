@@ -9,8 +9,10 @@
 <link href="<?= isset($_SESSION["admin"]) ? "/public/css/dashboard.css": "/public/css/Admin.css"; ?>" rel="stylesheet" type="text/css" media="all" />
 <link rel="stylesheet" href="/public/css/addProduct.css">
 <script src="https://kit.fontawesome.com/0a37ab2a11.js" crossorigin="anonymous"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 </head>
 <body>
+<?php if(isset($_SESSION["admin"])){ ?>
 <section>
     <div class="container-dashboard">
         <div class="dashboard">
@@ -62,5 +64,4 @@
                                 <h1>Trang Quản lý Live For Food</h1>
                             </div>
                     </div>
-
-
+<?php } ?>

@@ -14,7 +14,7 @@ class login extends adminController{
                 $_SESSION['admin'] = [];
                 $_SESSION['admin']['id'] = $admin['id'];
                 $_SESSION['admin']['name'] = $admin['name'];
-                header('location: /Admin');
+                echo '<script>alert("Đăng nhập thành công"); location.href="/Admin/"</script>';
             }
             
         }

@@ -1,8 +1,10 @@
+<?php if(isset($_SESSION["admin"])){ ?>
 </div>
             </div>
         </div>
     </div>
 </section>
+<?php } ?>
 <script>
     const show = document.getElementById('show-nav-bar');
 const navBar = document.getElementById('nav-bar');

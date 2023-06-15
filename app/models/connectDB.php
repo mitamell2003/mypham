@@ -1,5 +1,4 @@
 <?php
-require_once(__DIR__ . '/../../configs/config.php');
 class connectDB
 {
     private $host = DB_HOST;
@@ -15,10 +14,5 @@ class connectDB
         return $connect;
     }
 }
-$gettour = new connectDB();
-$sql = "SELECT tour.id, tour.dongia, tour.hinhAnh, tour.giamGia, diaiem.tenDiaDiem, diadiem.moTa, diadanh.tenDiaDanh, diadanh.moTa, diadanh.hinhanh
-FROM tour
-JOIN diadiem ON tour.idDiaDiemDen = diadiem.id
-JOIN diadanh ON tour.idDiaDiemDen = diadanh.id
-JOIN lichtrinh ON tour.maLichTrinh = lichtrinh.id;"
+
 ?>

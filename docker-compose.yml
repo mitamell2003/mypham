@@ -12,6 +12,7 @@ services:
       - web
     links:
       - php
+    
   php:
     container_name: web_php
     build: 
@@ -20,6 +21,7 @@ services:
     working_dir: /var/www/html
     networks:
       - web
+    
    
     
 networks:

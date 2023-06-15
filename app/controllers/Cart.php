@@ -32,7 +32,7 @@ class Cart extends baseController
             $timeCreate = date("Y-m-d H:i:s");
             $userId = (int)$_SESSION["user"]["id"];
             $totalPrice = $_SESSION['totalPrice'];
-            $status = "shipping";
+            $status = "pending";
             $branchId = htmlspecialchars($_POST['branch']);
             $address = $_SESSION["user"]["address"];
             $idOrder = $this->model->post("order", $userId, $status, $timeCreate, $totalPrice, $branchId, $address);
@@ -42,7 +42,7 @@ class Cart extends baseController
                 $this->model->post("detailOrder", $idOrder, $key, (int)$value["quantity"]);
             }
             $_SESSION["cart"] = [];
-            unset($_SESSION["totalPrice"]);
+            unset($_SESSION["totalPrice"]); 
             echo '<script>location.href="/";</script>';
         }
     }

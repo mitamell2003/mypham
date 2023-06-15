@@ -1,10 +1,6 @@
 <style>@import url("/public/css/updateProduct.css");</style>
 <div class="update-container">
-    <?php if(isset($_GET["ctl"])){
-        if($_GET["ctl"] == "updateProduct"){
-            require_once "updateProduct.php";
-        }
-    }else{?>
+    
     <div class="update">
         <table>
             <thead>
@@ -30,7 +26,7 @@
                         <td ><img src="<?php echo $row["image"] ?>" alt="<?php echo $row["name"] ?>" width="100%"></td>
                         <td><?php echo $row["discount"] ?></td>
                         <td class="action">
-                            <a href="?action=update&ctl=updateProduct&id=<?php echo $row["id"] ?>">Sửa</a>
+                            <a href="?action=update&ctl=updateProduct&id=<?php echo $row["id"] ?>" >Sửa</a>
                             <a href="?action=update&&ctl=delete&id=<?php echo $row["id"] ?>">Xóa</a>
                         </td>
                     </tr>
@@ -38,5 +34,5 @@
             </tbody>
         </table>
     </div>
-    <?php } ?>
+    
 </div>

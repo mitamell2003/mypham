@@ -14,8 +14,8 @@ class updateModel extends connectDB{
         $result = $this->connect->query($sql);
         return $result;
     }
-    public function update($name, $description, $price, $type, $image, $discount){
-        $sql = "UPDATE `product` SET `name`='$name',`description`='$description',`price`='$price',`type`='$type',`image`='$image',`discount`='$discount' WHERE `id` = '$_GET[id]'";
+    public function update($name, $description, $category, $price, $discount, $image, $id){
+        $sql = "UPDATE `product` SET `name`='$name',`description`='$description',`price`='$price',`category_id` = '$category' ,`image`='$image',`discount`='$discount' WHERE `id` = '$id'";
         $result = $this->connect->query($sql);
         return $result;
     }

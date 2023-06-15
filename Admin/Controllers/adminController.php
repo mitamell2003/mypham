@@ -6,10 +6,19 @@ class adminController extends connectDB{
         $checkAdmin = new login();
         $checkAdmin->checkAdmin();
         if(isset($_SESSION['admin'])){
-            require_once __DIR__ . "/dashboard.php";
-            $dashboard = new dashboard();
-            $dashboard->loadDashboard();
-            
+           
+            if(isset($_GET['action'])){
+                require_once $_GET['action'] . ".php";
+                $action = new $_GET['action']();
+                if(isset($_GET['ctl'])){
+                    call_user_func([$action, $_GET['ctl']]);
+                }else{
+                    call_user_func([$action, $_GET['action']]);
+                }
+                
+            }else{
+                
+            }
         }
     }
     public function loadModel($name)

@@ -10,8 +10,8 @@ services:
       - "80:80"
     networks:
       - web
-   
-      
+    links:
+      - php
   php:
     container_name: web_php
     build: 

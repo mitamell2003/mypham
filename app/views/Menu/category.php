@@ -5,7 +5,7 @@
           <div class="container-category">
             <div class="category-list">
               <div class="item-category">
-                <a href="/Menu/page"
+                <a href="/Menu/page/"
                   ><span class="img-category"
                     ><img
                       src="https://www.lotteria.vn/media/catalog/tmp/category/Promotion-01_1.jpg"

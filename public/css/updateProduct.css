@@ -1,0 +1,19 @@
+.update-container{
+    margin-top: 50px;
+}
+table{
+    width: 100%;
+}
+.table-header th{
+    text-align: center;
+    width: 12.5%;
+}
+.table-body{
+    text-align: center;
+}
+.table-body .action a{
+    padding-right: 10px;
+}
+.table-body .action a:hover{
+    color: red;
+}

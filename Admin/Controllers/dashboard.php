@@ -5,8 +5,14 @@ class dashboard extends adminController{
         //$this->model = $this->loadModel('dashboardModel');
     }
     public function loadDashboard(){
-        //$data = $this->model->loadDashboard();
-        $this->view('dashboard');
+        $this->view('dashboard',$this->checkCtl());
+    }
+    private function checkCtl(){
+        if(isset($_GET["ctl"])){
+            require_once $_GET["action"] . ".php";
+            $ctl = new $_GET["action"]();
+            return call_user_func([$ctl, $_GET["ctl"]]);
+        }
     }
 }
 ?>

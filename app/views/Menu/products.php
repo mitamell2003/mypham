@@ -35,7 +35,7 @@
                 >
               </div>
               <div class="item-category">
-                <a href="/Menu/page"
+                <a href="/Menu/page/"
                   ><span class="img-category"
                     ><img
                       src="https://www.lotteria.vn/media/catalog/tmp/category/Promotion-01_1.jpg"
@@ -55,8 +55,8 @@
                   ><span class="name-category"><?php echo $row['name'] ;?></span></a
                 >
               </div>
-              <?php } ?>
-              <?php } else{echo '<script>location.href="/Menu/page"</script>';} ?>
+              <?php }?>
+              <?php } else//{echo '<script>location.href="/Menu/page"</script>';} ?>
             </div>
           </div>
           <div class="container-product">
@@ -77,7 +77,7 @@
                   <div class="price-product">
                     <p><?php 
                        $price = (int)$row['price'];
-                      if($row["discount"] == NULL){
+                      if($row["discount"] == NULL && $row["discount"] == 0){
                        echo number_format($price);
                     }else{
                       $price = (int)($row["price"] - ($row["price"] * $row["discount"] / 100));
@@ -105,11 +105,13 @@
       </div>
     </section>
 <section class="pagination">
+  <?php if(isset($data[1])){ ?>
   <div class="container-pagination">
-    <a href="/Menu/page/<?php echo $data[1]; ?>" title="Trang trước">«</a>
+    <a href="/Menu/page/<?php echo $data[1]; ?>/" title="Trang trước">«</a>
     <?php for ($i = 1; $i <= $data[4]; $i++){ ?>
-      <a href="/Menu/page/<?php echo $i; ?>" title="Trang <?php echo $i; ?>" <?php echo $data[3] == $i ?'class="active"': ""; ?>><?php echo $i; ?></a>
+      <a href="/Menu/page/<?php echo $i; ?>/" title="Trang <?php echo $i; ?>" <?php echo $data[3] == $i ?'class="active"': ""; ?>><?php echo $i; ?></a>
     <?php } ?>
-    <a href="/Menu/page/<?php echo $data[2]; ?>" title="Trang sau">»</a>     
+    <a href="/Menu/page/<?php echo $data[2]; ?>/" title="Trang sau">»</a>     
   </div>
+  <?php } ?>
 </section>

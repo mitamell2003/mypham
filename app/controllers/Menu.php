@@ -6,20 +6,30 @@ class Menu extends baseController{
         $this->model = $this->loadModel('menuModel');
     }
     public function index(){
-       $this->view('menu/products', $this->model->getAll());
-       $data =[];
-        $data[0] = $this->model->getAll();
-    //    require_once __DIR__ . "/../views/menu/products.php";
+        
+        
+        //$this->view('menu/products', $this->model->getAll());
+       
+       //$data =[];
+        //$data[0] = $this->model->getAll();
+    //  require_once __DIR__ . "/../views/menu/products.php";
     }
     public function page($currentPage = 1){
-       
-        $totalPage = ceil((int)$this->model->productNumber()->fetch_assoc()["COUNT(*)"] / LIMIT_PAGE);
-        // Nếu số trang hiện tại lớn hơn tổng số trang thì gán bằng tổng số trang và ngược lại nhỏ hơn 1 thì gán bằng 1
-        $currentPage =  $currentPage > $totalPage ?  $totalPage : ($currentPage < 1 ? 1 : $currentPage);
-        $start = ($currentPage - 1) * LIMIT_PAGE;
-        $previousPage = $currentPage > 1 ? $currentPage - 1 : 1;
-        $nextPage = $currentPage < $totalPage ? $currentPage + 1 : $totalPage;
-        $this->view('Menu/products', $this->getProducts($start) , $previousPage, $nextPage, $currentPage, $totalPage, $this->model->getCategory());
+        if($_SERVER["REQUEST_METHOD"] == 'GET' && isset($_GET["search"])){
+            $result = $this->model->search($_GET["search"]);
+            
+            $this->view('Menu/products', $result);
+        }
+        else{
+            $totalPage = ceil((int)$this->model->productNumber()->fetch_assoc()["COUNT(*)"] / LIMIT_PAGE);
+            // Nếu số trang hiện tại lớn hơn tổng số trang thì gán bằng tổng số trang và ngược lại nhỏ hơn 1 thì gán bằng 1
+            $currentPage =  $currentPage > $totalPage ?  $totalPage : ($currentPage < 1 ? 1 : $currentPage);
+            $start = ($currentPage - 1) * LIMIT_PAGE;
+            $previousPage = $currentPage > 1 ? $currentPage - 1 : 1;
+            $nextPage = $currentPage < $totalPage ? $currentPage + 1 : $totalPage;
+            $this->view('Menu/products', $this->getProducts($start) , $previousPage, $nextPage, $currentPage, $totalPage, $this->model->getCategory());
+        }
+        
         // $data = [];
         // $data[0] = $this->getProducts($start);
         // $data[1] = $previousPage;
@@ -46,9 +56,7 @@ class Menu extends baseController{
     }
     public function search($name = ""){
         ob_end_clean();
-        if($_SERVER["REQUEST_METHOD"] == 'GET' && isset($_GET["search"])){
-            echo '<script>location.href="/Menu/page"</script>';
-        }
+        
         $key = htmlspecialchars($name);
         if($name !== ""){
             $result = $this->model->search($key);

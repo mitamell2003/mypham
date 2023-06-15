@@ -1,6 +1,6 @@
 <?php
 session_start();
 require_once 'bootstrap.php';
-$app = new App();
-$app->Run();
+$quanlychuoicuahang = new App();
+$quanlychuoicuahang->Run();
 ?>

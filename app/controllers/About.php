@@ -1,7 +1,7 @@
 <?php
-class About  {
+class About extends baseController {
     public function index(){
-        echo "About index";
+       $this->view('About');
     }
 }
  ?>

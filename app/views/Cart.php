@@ -2,7 +2,7 @@
   <div class="container-cart">
     <div class="title"><h2>Giỏ hàng của bạn</h2></div>
     <div class="container-cart-items">
-      <?php foreach($_SESSION["cart"] as $key => $value){ ?>
+      <?php foreach($_SESSION["cart"] as $key => $value){?>
       <div class="cart-item">
         <div class="img-item">
           <img src="<?php echo $value["image"];?>" alt="<?php echo $value["name"];?>" />
@@ -33,7 +33,6 @@
         </div>
       </div>
       <?php } ?>
-      
     </div>
     <div class="create-order">
       <div class="container-form">

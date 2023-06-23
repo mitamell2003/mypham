@@ -21,7 +21,7 @@ class updateModel extends connectDB{
     }
     
     public function delete(){
-        $sql = "DELETE FROM `product` WHERE `id` = '$_GET[id]'";
+        $sql = "DELETE FROM product WHERE `product`.`id` = '$_GET[id]'";
         $result = $this->connect->query($sql);
         return $result;
     }

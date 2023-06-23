@@ -49,6 +49,9 @@
                       if($row["discount"] == NULL){
                        echo number_format($price);
                     }else{
+                      if ((int)$row["discount"] > 100){
+                        $row["discount"] = 100;
+                      }
                       $price = (int)($row["price"] - ($row["price"] * $row["discount"] / 100));
                       echo number_format($price);
                     }?>

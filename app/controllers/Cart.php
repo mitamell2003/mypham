@@ -11,10 +11,10 @@ class Cart extends baseController
         if (!isset($_SESSION["user"])) {
             echo '<script>location.href="/";</script>';
         }
-        $data = [];
-        $data[0] = $this->loadModel("modelBranch")->get();
-        require_once __DIR__ . "/../views/Cart.php";
-        // $this->view('Cart', $this->loadModel("modelBranch")->get());
+        // $data = [];
+        // $data[0] = $this->loadModel("modelBranch")->get();
+        // require_once __DIR__ . "/../views/Cart.php";
+        $this->view('Cart', $this->loadModel("modelBranch")->get());
         $this->order();
     }
     public function delete()

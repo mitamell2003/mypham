@@ -92,6 +92,6 @@ for i in response["items"]:
     val = (name, description, price, category, 6, img, 2,discount)
     mycursor.execute(sql, val)
     mydb.commit()
-    print(mycursor.rowcount, "record inserted.")
+    print(mycursor.rowcount, "record inserted. ")
     
     

@@ -1,25 +1,29 @@
+<style>@import url("/public/css/orderAdmin.css");</style>
 <div class="container-order">
     <div class="order">
         <div class="layout-branch">
             <div class="title">
                 <h2>Đơn hàng chưa hoàn thành</h2>
             </div>
-            <div id="branch">
+            <div class="branch">
+                <?php while ($branch = $data[0]->fetch_assoc()){ ?>
                 <div class="items">
-                    <a href="">
-                        <span class="image-branch">
-                            <img src="/public/images/home2.png" alt="">
-                        </span>
-                        <span>
-                            <span class="name-branch">Chí Nhánh 2</span>
-                            <span class="address-branch">54 Xô Viết Nghệ Tĩnh, Q.Bình Thạnh, TPHCM</span>
-                            <span class="details-order">
-                                <span class="count-products">Số lượng mặt hàng: 3</span>
-                                <span class="total-price">Tổng: 402,000đ</span>
-                            </span>
+                    <div class="image-branch">
+                        <img src="/public/images/<?php echo $branch["img"] ?>" alt="">
+                    </div>
+                    <a href="/Admin/?action=order&id=<?php echo $branch["id"] ?>">
+                       <span class="name-address">
+                            <span class="name-branch"><?php echo $branch["name"] ?></span>
+                            <span class="address-branch"><?php echo $branch["address"] ?></span>
+                       </span>
+                        <span class="details-order">
+                            <span class="count-products">Thời gian giao hàng yêu cầu: </span>
+                            <span><?php echo $branch["delivery_time"] ?></span>
+                            <span class="total-price">Tổng: <?php echo number_format((int)$branch["price_total"]) ?> đ</span>
                         </span>
                     </a>
                 </div>
+                <?php } ?>
             </div>
         </div>
         <div class="layout-info-order">
@@ -27,24 +31,46 @@
                 <h2>Thông tin chi tiết đơn hàng</h2>
             </div>
             <div id="container-info-order">
+                <?php if (isset($_GET["id"])){ ?>
+                
                 <div class="info-order">
+                    <?php while( $details = $data[1]->fetch_assoc()){ ?>
                     <div class="items-product">
                         <div class="inner-items-product">
                             <div class="image-product">
-                                <img src="/public/images/home2.png" alt="">
+                                <img src="<?php echo $details["image"] ?>" alt="">
                             </div>
                             <div class="info-product">
-                                <div class="name-product">Tên sản phẩm</div>
-                                <div class="price-product">Giá: 100,000đ</div>
-                                <div class="quantity-product">Số lượng: 2</div>
+                                <div class="name-product"><p>Tên sản phẩm: <?php echo $details["product_name"] ?></p></div>
+                                <div class="price-product"><p>Giá: <?php echo number_format((int)$details["price"]); ?>đ</p></div>
+                                <div class="quantity-product"><p>Số lượng: <?php echo $details["quantity"] ?></p></div>
                             </div>
                         </div>
                     </div>
+                    <?php $name = $details["account_name"]; $phone = $details["phone"]; $address = $details["delivery_address"]; } ?>
+                    <hr>
+                    <div class="address-customer">
+                        <p>Địa chỉ giao hàng: <?php echo $address ?></p>
+                    </div>
+                    <div class="address-customer">
+                        <p>Tên khách hàng: <?php echo $name ?></p>
+                    </div>
+                    <div class="address-customer">
+                        <p>Số điện thoại: <?php echo $phone ?></p>
+                    </div>
                     <div class="btn">
-                        <button>Giao hàng ngay cho khách</button>
-                        <button>Xác nhận giao thành công</button>
+                        <form action="" method="post">
+                            <input type="text" name="status" id="shipping" value="shipping" style="display: none;">
+                            <button type="submit" style="background-color: #B2A4FF ;" <?php if($data[2] != "pending") echo "disabled" ?>>Giao hàng ngay cho khách</button>
+                        </form>
+                        <form action="" method="post">
+                        <input type="text" name="status" id="delivered" value="success" style="display: none;">
+                            <button type="submit" style="background-color: #fc8f8f;" <?php if($data[2] != "delivered") echo "disabled" ?>>Xác nhận giao thành công</button>
+                        </form>
+                        
                     </div>
                 </div>
+                <?php } ?>
             </div>
         </div>
     </div>

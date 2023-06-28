@@ -5,7 +5,7 @@ class orderModel extends connectDB{
         $this->connect = $this->connect();
     }
     public function get($id){
-        $sql = "SELECT * FROM oder WHERE user_id = $id";
+        $sql = "SELECT * FROM oder WHERE user_id = $id ORDER BY `oder`.`id` DESC ";
         return $this->connect->query($sql);
     }
     public function post($id){

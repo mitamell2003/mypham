@@ -1,3 +1,4 @@
+<?php date_default_timezone_set('Asia/Ho_Chi_Minh');?>
 <section class="cart-order">
   <div class="container-cart">
     <div class="title"><h2>Giỏ hàng của bạn</h2></div>
@@ -56,13 +57,15 @@
             </div>
             <div class="address-order">
               <div class="label-info-order label-address">
-                <h5>Địa chỉ nhận hàng:</h5>
+                <h5>Nhập địa chỉ nhận hàng:</h5>
               </div>
               <div class="label-address-full">
-                <p><?php echo $_SESSION['user']['address']; ?></p>
+                <input type="text" name="diaChiNhanHang" id="diaChiNhanHang" value="<?php echo $_SESSION['user']['address']; ?>">
+                
               </div>
             </div>
             <div class="select-branch">
+
               <div class="label-branch">
                 <label for="branch">Chọn chi nhánh gần bạn nhất:</label>
               </div>
@@ -74,7 +77,73 @@
                 </select>
               </div>
             </div>
+            <div class="container-delivery-time">
+              <hr>
+              <h2>Chọn thời gian giao hàng</h2>
+              <div class="y-m-d">
+              <div class="d">
+                <label for="day">Ngày:</label>
+                <select name="day" id="day"></select>
+              </div>
+              <div class="m">
+                <label for="month">Tháng:</label>
+                <select name="month" id="month" onchange="updateDays()"></select>
+              </div>
+
+<script>
+  var daySelect = document.getElementById("day");
+  var monthSelect = document.getElementById("month");
+
+  // Hàm để cập nhật số ngày trong phần tử select của ngày
+  function updateDays() {
+    var today = new Date();
+    var currentMonth = parseInt(monthSelect.value);
+    var currentYear = today.getFullYear();
+
+    // Xóa tất cả các tùy chọn hiện có trong phần tử select của ngày
+    daySelect.innerHTML = "";
+
+    var daysInMonth = new Date(currentYear, currentMonth, 0).getDate();
+
+    for (var i = 1; i <= daysInMonth; i++) {
+      var option = document.createElement("option");
+      option.value = i;
+      option.text = i;
+      daySelect.appendChild(option);
+    }
+  }
+
+  // Tạo tùy chọn cho phần tử select của tháng
+  for (var i = 1; i <= 12; i++) {
+    var option = document.createElement("option");
+    option.value = i;
+    option.text = i;
+    monthSelect.appendChild(option);
+  }
+
+  // Cập nhật số ngày ban đầu khi trang được tải
+  updateDays();
+</script>
+
+                <div class="y">
+                  <label for="year">Tháng:</label>
+                  <select name="year" id="year">
+                    <option value="<?php echo date("Y")?>"><?php echo date("Y")?></option>
+                  </select>
+                </div>
+              </div>
+              <div class="hours">
+                <label for="hours">Vui lòng chọn khung giờ để giao hàng: </label>
+                <select name="hours" id="hours">
+                  <?php for ($i = 8; $i <= 20; $i++){?>
+                    <option value="<?php echo $i;?>"><?php echo $i;?></option>
+                  <?php }?>
+                </select>
+                <p>Giờ</p>
+              </div>
           </div>
+          </div>
+          
           <div class="info-price">
             <div class="price-total"> 
               <div class="label-price">

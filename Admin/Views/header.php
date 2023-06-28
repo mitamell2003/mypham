@@ -38,7 +38,7 @@
                             <a href="?action=update">Sửa sản phẩm: </a>
                         </li>
                         <li>
-                            <a href="?action=statistics">Thống kê</a>
+                            <a href="?action=thongke">Thống kê</a>
                         </li>
                     </ul>
                 </div>

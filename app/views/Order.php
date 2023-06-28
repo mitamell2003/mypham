@@ -35,7 +35,7 @@
               </td>
               <td>
                 <?php
-                  if($row["status"] == "delivered"){
+                  if($row["status"] == "success"){
                     echo "Đã thanh toán";
                   }
                   else{
@@ -51,7 +51,7 @@
                           $status = "Đang chờ xử lý";
                           break;
                       case "delivered":
-                          $status = "Đã giao hàng";
+                          $status = "Đã nhận hàng";
                           break;
                       case "cancel":
                           $status = "Đã hủy";
@@ -59,13 +59,16 @@
                       case "shipping":
                           $status = "Đang giao hàng";
                           break;
+                      case "success":
+                          $status = "Thành công";
+                          break;
                   }
                   echo $status;
                 ?></td>
               <td class="action">
               <?php
                 if( $row["status"] != "delivered" && $row["status"] != "cancel"){?>
-                  <button data-id="<?php echo $row["id"] ?>" onclick="cancelOrder(this)">Hủy đơn</button>
+                  <button <?php if($status == "shipping") echo "disabled" ?> data-id="<?php echo $row["id"] ?>" onclick="cancelOrder(this)" >Hủy đơn</button>
               <?php }?>
                 <a href="#" target="_blank">Chi tiết</a>
               </td>

@@ -10,7 +10,7 @@ class updateModel extends connectDB{
         return $result;
     }
     public function getAll(){
-        $sql = "SELECT * FROM `product`";
+        $sql = "SELECT * FROM `product` ORDER BY `product`.`id` DESC";
         $result = $this->connect->query($sql);
         return $result;
     }

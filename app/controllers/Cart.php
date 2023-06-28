@@ -14,7 +14,7 @@ class Cart extends baseController
         // $data = [];
         // $data[0] = $this->loadModel("modelBranch")->get();
         // require_once __DIR__ . "/../views/Cart.php";
-        $this->view('Cart', $this->loadModel("modelBranch")->get());
+        $this->view('Cart/Cart', $this->loadModel("modelBranch")->get());
         $this->order();
     }
     public function delete()
@@ -29,21 +29,30 @@ class Cart extends baseController
     private function order(){
         if(isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST' ){
             date_default_timezone_set('Asia/Ho_Chi_Minh');
-            $timeCreate = date("Y-m-d H:i:s");
-            $userId = (int)$_SESSION["user"]["id"];
-            $totalPrice = $_SESSION['totalPrice'];
-            $status = "pending";
-            $branchId = htmlspecialchars($_POST['branch']);
-            $address = $_SESSION["user"]["address"];
-            $idOrder = $this->model->post("order", $userId, $status, $timeCreate, $totalPrice, $branchId, $address);
-            // thêm vào bảng detail_order
-           
-            foreach($_SESSION["cart"] as $key => $value){
-                $this->model->post("detailOrder", $idOrder, $key, (int)$value["quantity"]);
+            if($_POST["month"] < date("m") || ($_POST["month"] == date("m") && $_POST["day"] < date("d")) ||($_POST["hours"] < date("H") && $_POST["day"] == date("d") && $_POST["month"] == date("m"))){
+                echo '<script>alert("Thời gian giao hàng không hợp lệ");</script>';
+                echo '<script>location.href="/Cart";</script>';
+            }else{
+                $timeCreate = date("Y-m-d H:i:s");
+                $userId = (int)$_SESSION["user"]["id"];
+                $totalPrice = $_SESSION['totalPrice'];
+                $status = "pending";
+                $branchId = htmlspecialchars($_POST['branch']);
+                $address = $_POST['diaChiNhanHang'];
+                $idOrder = $this->model->post("order", $userId, $status, $timeCreate, $totalPrice, $branchId, $address, "$_POST[year]-$_POST[month]-$_POST[day] $_POST[hours]:00:00");
+                // thêm vào bảng detail_order
+               
+                foreach($_SESSION["cart"] as $key => $value){
+                    $this->model->post("detailOrder", $idOrder, $key, (int)$value["quantity"]);
+                }
+                $_SESSION["cart"] = [];
+                unset($_SESSION["totalPrice"]); 
+                echo '<script>location.href="/";</script>';
             }
-            $_SESSION["cart"] = [];
-            unset($_SESSION["totalPrice"]); 
-            echo '<script>location.href="/";</script>';
+           
         }
+    }
+    public function details(){
+        
     }
 }

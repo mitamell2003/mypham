@@ -8,10 +8,14 @@ class Order extends baseController{
         if(!isset($_SESSION["user"])){
             echo '<script>location.href="/";</script>';
         }
-        $this->view("Order",$this->model->get($_SESSION["user"]["id"]));
+        $this->view("Order/Order",$this->model->get($_SESSION["user"]["id"]));
     }
     public function details($id = 0){
-        echo "Order - $id";
+        if ($id == 0) {
+            echo '<script>location.href="/";</script>';
+        }else{
+            $this->view("Order/Details");
+        }
     }
     /**
      * @method POST

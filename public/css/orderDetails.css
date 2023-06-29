@@ -1,0 +1,86 @@
+.container-order-details{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-family);
+    background-color: #f7f7f7;
+    padding: 30px;
+}
+.order-details{
+    width: 85%;
+    padding: 1.2%;
+    background-color: white;    
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+}
+.container-order-info{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.order-info{
+    width: 100%;
+    display: flex;
+}
+.order-info .order-address{
+    width: 40%;
+    padding: 10px;
+    height: 100%;
+}
+.order-address .title{
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.order-address .receiver{
+    padding: 6px;
+}
+.receiver .name{
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+.receiver .phone, .receiver .address{
+    color: #6d6d6d;
+    font-size: .9rem;
+}
+.receiver .phone{
+    margin-bottom: 7px;
+}
+.order-info .delivery{
+    width: 60%;
+    padding: 10px;
+    border-left: 1px solid #c8c8c8;
+}
+.delivery .van-chuyen{
+    text-align: end;
+    font-size: .8rem;
+    color: #999999;
+    margin-bottom: 40px;
+}
+.delivery-time{
+    width: 100%;
+}
+.delivery-time-items{
+    width: 100%;
+    display: flex;
+    font-size: .9rem;
+    color: #4b4b4b;
+    margin-bottom: 20px;
+}
+.delivery-time-items .tron{
+    width: 5%;
+}
+.items-details{
+    display: flex;
+    width: 95%;
+}
+.items-details .time{
+    width: 25%;
+}
+.items-details .status{
+    width: 75%;
+}

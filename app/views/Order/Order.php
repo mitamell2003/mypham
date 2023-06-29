@@ -70,7 +70,7 @@
                 if( $row["status"] != "delivered" && $row["status"] != "cancel"){?>
                   <button <?php if($status == "shipping") echo "disabled" ?> data-id="<?php echo $row["id"] ?>" onclick="cancelOrder(this)" >Hủy đơn</button>
               <?php }?>
-                <a href="#" target="_blank">Chi tiết</a>
+                <a href="/Order/details/<?php echo $row["id"] ?>" target="_blank">Chi tiết</a>
               </td>
             </tr>
             <?php } ?>

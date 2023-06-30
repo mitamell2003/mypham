@@ -25,7 +25,7 @@
               <td><?php echo $row["create_order"] ?></td>
               <td>
                 <?php
-                  if($row["order_completion"] != NULL && $row["status"] == "delivered"){
+                  if($row["order_completion"] != NULL && $row["status"] == "success"){
                     echo $row["order_completion"];
                   }
                   else{
@@ -66,10 +66,7 @@
                   echo $status;
                 ?></td>
               <td class="action">
-              <?php
-                if( $row["status"] != "delivered" && $row["status"] != "cancel"){?>
-                  <button <?php if($status == "shipping") echo "disabled" ?> data-id="<?php echo $row["id"] ?>" onclick="cancelOrder(this)" >Hủy đơn</button>
-              <?php }?>
+              
                 <a href="/Order/details/<?php echo $row["id"] ?>" target="_blank">Chi tiết</a>
               </td>
             </tr>

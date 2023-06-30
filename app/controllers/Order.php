@@ -8,15 +8,22 @@ class Order extends baseController{
         if(!isset($_SESSION["user"])){
             echo '<script>location.href="/";</script>';
         }
-        $this->view("Order/Order",$this->model->get($_SESSION["user"]["id"]));
+        $this->view("Order/Order",$this->model->getAll($_SESSION["user"]["id"]));
     }
     public function details($id = 0){
         if ($id == 0) {
             echo '<script>location.href="/";</script>';
         }else{
-            $this->view("Order/Details");
+            if(isset($_POST["status"])){
+                $status = $_POST["status"];
+                $this->model->post($id, $status);
+                echo '<script>location.href="/Order/Details/'.$id. '";</script>';
+            }
+                
+            $this->view("Order/Details", $this->model->getInfo($id)->fetch_assoc(), $this->model->getProduct($id));
         }
     }
+   
     /**
      * @method POST
      * hủy đơn hàng

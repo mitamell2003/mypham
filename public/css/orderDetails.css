@@ -1,14 +1,16 @@
 .container-order-details{
     width: 100%;
-    height: 100%;
+    min-height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: var(--font-family);
     background-color: #f7f7f7;
     padding: 30px;
+    
 }
 .order-details{
+    
     width: 85%;
     padding: 1.2%;
     background-color: white;    
@@ -83,4 +85,144 @@
 }
 .items-details .status{
     width: 75%;
+}
+.container-product-info{
+    width: 100%;
+
+    padding-top: 50px;
+}
+.product-info{
+    width: 100%;
+}
+.product-items{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #c8c8c8;
+}
+.product-items .image{
+    width: 10%;
+}
+.product-items img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.product-items .name-description-quantity{
+    width: 55%;
+    padding-left: 15px;
+}
+.name-description-quantity .name, .name-description-quantity .quantity{
+    width: 100%;
+}
+.name-description-quantity .name{
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.name-description-quantity .description{
+    width: 50%;
+    font-size: .9rem;
+    color: #6d6d6d;
+    margin-bottom: 10px;
+}
+.name-description-quantity .quantity span{
+    color: #05acf4;
+}
+.product-items .price{
+    width: 25%;
+    display: flex;
+    justify-content: flex-end;
+}
+.price .price-old{
+    width: 50%;
+    color: #6d6d6d;
+    text-decoration: line-through;
+}
+.price .price-new{
+    width: 50%;
+}
+.price .price-new span{
+    color: #f44905;
+}
+.container-payment{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+.payment{
+    width: 100%;
+    height: 50px;
+    border-bottom: 3px solid #05acf4;
+    border-top: 3px solid #05acf4;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    color: #000000;
+    background: linear-gradient(to right, rgb(255, 228, 230), rgb(204, 251, 241));
+}
+.payment span{
+    color: #e68f0c;
+}
+.container-price-total{
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+}
+.price-total{
+    width: 35%;
+}
+.price-total div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: #4b4b4b;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.price-total p {
+    width: 35%;
+}
+.price-total span{
+    width: 65%;
+}
+.container-btn-status{
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+}
+.btn-status{
+    width: 45%;
+    display: flex;
+}
+.btn-status form{
+    width: 40%;
+    height: 40px;
+}
+.btn-status button{
+    height: 100%;
+    width: 75%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+#f-cancel button{
+   background-color: #f6b398; 
+    color: white;
+}
+#f-delivery button{
+    background-color: #05acf4;
+    color: white;
+}
+.btn-status button:hover{
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
 }

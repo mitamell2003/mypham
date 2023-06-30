@@ -15,7 +15,6 @@ class adminController extends connectDB{
                 }else{
                     call_user_func([$action, $_GET['action']]);
                 }
-                
             }else{
                 
             }

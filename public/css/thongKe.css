@@ -1,0 +1,101 @@
+.container-thongkedonhang{
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+    font-size: 1.1rem;
+}
+.thongkedonhang{
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+}
+.r-b-p{
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.r-b-p .container-revenue{
+    width: 40%;
+}
+
+ .nav a:hover{
+    color: #fb5151;
+}
+.r-b-p .container-hot-product, .r-b-p .container-hot-branch{
+    width: 30%;
+    border-left: 1px solid #fb5151;
+}
+.border{
+    height: 100%;
+    border-radius: 5px;
+    border: 2px solid #349bfb;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+.nav{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 7px;
+}
+.border:hover{
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 10px 0px #98c9f7;
+}
+.revenue .t-r{
+    width: 100%;
+    font-size: 1.5rem;
+    color: #026bcc;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.revenue .r{
+    width: 100%;
+    font-size: 1.2rem;
+    color: #565656;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.boom{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.boom-item{
+    flex: 0 33.3333333%;
+    width: 33.33333333%;
+}
+.p10{
+    padding: 0 10px;
+}
+.t-x{
+    color: #349bfb;
+}
+.t-red{
+    color: #fb5151;
+}
+.t-size{
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.t-size1{
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.num1{
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+}
+.name{
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 10px;
+}

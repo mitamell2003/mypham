@@ -21,7 +21,7 @@ class update extends adminController{
             $this->view('updateProduct',$dataUpdate);
             if(isset($_FILES) && $_SERVER["REQUEST_METHOD"] == "POST"){
                 if ($_FILES["image-product"]["name"] == ""){
-                    $image = $dataUpdate["image"];
+                    $image = $dataUpdate["image"]; 
                 }
                 $name = $_POST["name-product"];
                 $category = $_POST["category-product"];

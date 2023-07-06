@@ -1,5 +1,6 @@
 .container-order-details{
     width: 100%;
+    min-width: var(--screen-md);
     min-height: 600px;
     display: flex;
     justify-content: center;

@@ -63,7 +63,7 @@
             <div class="container-boom-user boom-item p10">
                 <div class="boom-user border">
                     <div class="tbu t-red t-size">
-                        <p>Người dùng boom hàng nhiều nhất</p>
+                        <p>Người dùng hủy đơn nhiều nhất</p>
                     </div>
                     <div class="nbu name">
                         <p><?php echo $data[3]["name"] ?></p>
@@ -75,7 +75,7 @@
                         <p>Số điện thoại: <?php echo $data[3]["phone"] ?></p>
                     </div>
                     <div class="quantity">
-                        <p class="t-size1">Số lượng đơn hàng đã boom: </p><p class="t-red num1"><?php echo $data[3]["count"] ?></p>
+                        <p class="t-size1">Số lượng đơn hàng đã hủy: </p><p class="t-red num1"><?php echo $data[3]["count"] ?></p>
                     </div>
                     <div class="nav">
                         <a href="#">Click để xem chi tiết</a>
@@ -85,16 +85,16 @@
             <div class="container-boom-branch boom-item p10">
                 <div class="boom-branch border">
                     <div class="tbb t-red t-size">
-                        <p>Chi nhánh bị boom hàng nhiều nhất</p>
+                        <p>Chi nhánh bị hủy đơn nhiều nhất</p>
                     </div>
                     <div class="nbb">
-                        <p>Chi nhánh 1</p>
+                        <p>Tên chi nhánh: <?php echo $data[5]["name"] ?></p>
                     </div>
                     <div class="abb">
-                        <p>Địa chỉ: 123, Quận 1, TP.HCM</p>
+                        <p>Địa chỉ: <?php echo $data[5]["address"] ?></p>
                     </div>
                     <div class="quantity">
-                        <p class="t-size1">Số lượng đơn hàng đã bị boom:</p> <p class="t-red num1">1000</p>
+                        <p class="t-size1">Số lượng đơn hàng đã bị boom:</p> <p class="t-red num1"><?php echo $data[5]["count"] ?></p>
                     </div>
                     <div class="nav">
                         <a href="#">Click để xem chi tiết</a>

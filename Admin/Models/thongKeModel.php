@@ -38,5 +38,10 @@ class thongKeModel extends connectDB{
         $result = $this->connect->query($sql);
         return $result->fetch_assoc();
     }
+    public function boomBranch(){
+        $sql = "SELECT * FROM branch JOIN (SELECT COUNT(oder.id_branch) AS `count`, oder.id_branch FROM oder WHERE oder.status = 'cancel' GROUP BY oder.id_branch ORDER BY `count` DESC LIMIT 1) o ON branch.id = o.id_branch;";
+        $result = $this->connect->query($sql);
+        return $result->fetch_assoc();
+    }
 }
  ?>

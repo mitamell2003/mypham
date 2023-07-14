@@ -41,7 +41,6 @@ class Cart extends baseController
                 $address = $_POST['diaChiNhanHang'];
                 $idOrder = $this->model->post("order", $userId, $status, $timeCreate, $totalPrice, $branchId, $address, "$_POST[year]-$_POST[month]-$_POST[day] $_POST[hours]:00:00");
                 // thêm vào bảng detail_order
-               
                 foreach($_SESSION["cart"] as $key => $value){
                     $this->model->post("detailOrder", $idOrder, $key, (int)$value["quantity"]);
                 }

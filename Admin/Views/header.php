@@ -40,6 +40,9 @@
                         <li>
                             <a href="?action=thongke">Thống kê</a>
                         </li>
+                        <li>
+                            <a href="?action=logout">Đăng xuất</a>
+                        </li>
                     </ul>
                 </div>
                 <div id="show-nav-bar">

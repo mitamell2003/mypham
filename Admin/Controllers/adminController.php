@@ -6,7 +6,6 @@ class adminController extends connectDB{
         $checkAdmin = new login();
         $checkAdmin->checkAdmin();
         if(isset($_SESSION['admin'])){
-           
             if(isset($_GET['action'])){
                 require_once $_GET['action'] . ".php";
                 $action = new $_GET['action']();

@@ -11,7 +11,5 @@ if (!isset($_SESSION["admin"])){
 $admin = new adminController();
 $admin->management();
 
-
-
 require_once __DIR__ . "/Views/footer.php";
 ?>

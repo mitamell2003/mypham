@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <footer class="text-center text-lg-start bg-white text-dark">
         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
             <div class="me-5 d-none d-lg-block fw-light">
@@ -68,5 +69,11 @@
             © 2023 Copyright
         </div>
     </footer>
+
 </body>
 </html>
+<?php
+if(isset($_SERVER["REQUEST_METHOD"])&& $_SERVER["REQUEST_METHOD"] == 'POST'){
+    ob_end_clean();
+}
+ ?>

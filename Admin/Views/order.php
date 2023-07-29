@@ -17,8 +17,8 @@
                             <span class="address-branch"><?php echo $branch["address"] ?></span>
                        </span>
                         <span class="details-order">
-                            <span class="count-products">Thời gian giao hàng yêu cầu: </span>
-                            <span><?php echo $branch["delivery_time"] ?></span>
+                            <span class="count-products">Thời gian giao đặt hàng: </span>
+                            <span><?php echo $branch["create_order"] ?></span>
                             <span class="total-price">Tổng: <?php echo number_format((int)$branch["price_total"]) ?> đ</span>
                         </span>
                     </a>

@@ -26,7 +26,7 @@ extends connectDB{
         
     }
     public function getBranch(){
-        $sql = "SELECT oder.id, oder.delivery_time, oder.user_id, oder.price_total, oder.id_branch, branch.name, branch.address, branch.img FROM `oder` JOIN branch ON `oder`.`id_branch` = `branch`.`id` WHERE `oder`.`status` = 'pending' OR `oder`.`status` = 'shipping' OR `oder`.`status` = 'delivered' ORDER BY `oder`.`delivery_time` ASC";
+        $sql = "SELECT oder.id, oder.create_order, oder.user_id, oder.price_total, oder.id_branch, branch.name, branch.address, branch.img FROM `oder` JOIN branch ON `oder`.`id_branch` = `branch`.`id` WHERE `oder`.`status` = 'pending' OR `oder`.`status` = 'shipping' OR `oder`.`status` = 'delivered' ORDER BY `oder`.`create_order` ASC";
         $result = $this->connect->query($sql);
         return $result;
     }

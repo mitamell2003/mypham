@@ -33,15 +33,16 @@ class Cart extends baseController
             $userId = (int) $_SESSION["user"]["id"];
             $totalPrice = $_SESSION['totalPrice'];
             $status = "pending";
-            $address = htmlspecialchars($_POST["address"]);
-            $idOrder = $this->model->post("order", $userId, $status, $timeCreate, $totalPrice, 30, $address);
+            $address = $_POST["diaChiNhanHang"];
+           
+            $idOrder = $this->model->post("order", $userId, $status, $timeCreate, $totalPrice, 30, (string)$address);
             // thêm vào bảng detail_order
             foreach ($_SESSION["cart"] as $key => $value) {
-                $this->model->post("detailOrder", $idOrder, $key, (int) $value["quantity"]);
+                $this->model->post("detailOrder", $idOrder, $key, (int) $value["quantity"]); 
             }
             $_SESSION["cart"] = [];
             unset($_SESSION["totalPrice"]);
-            echo '<script>location.href="/Order";</script>';
+            echo '<script>alert("Đặt hàng thành công");location.href="/Order";</script>';
 
         }
     }

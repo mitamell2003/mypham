@@ -29,9 +29,6 @@
                             <a href="?action=order">Đơn hàng</a>
                         </li>
                         <li>
-                            <a href="?action=user">Khách hàng</a>
-                        </li>
-                        <li>
                             <a href="?action=add">Thêm sản phẩm: </a>
                         </li>
                         <li>

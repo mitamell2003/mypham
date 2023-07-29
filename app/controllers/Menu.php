@@ -120,6 +120,7 @@ class Menu extends baseController{
         } 
         
     }
+    // Tính tổng tiền trong giỏ hàng
     public function totalPrice()
     {
         $total = array_reduce($_SESSION["cart"], function ($prev, $current) {

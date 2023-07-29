@@ -11,7 +11,6 @@ class Login extends baseController{
 
         }else{
             $this->view('Login');
-            # require_once __DIR__ . "/../views/Login.php";
             if(isset($_POST['username']) && isset($_POST['password'])){
                 $userName = htmlspecialchars($_POST['username']);
                 $password = htmlspecialchars($_POST['password']);
@@ -20,6 +19,7 @@ class Login extends baseController{
         }
         
     }
+    // hàm kiểm tra đăng nhập
     private function checkLogin($userName, $password){
         $result = $this->model->post($userName, $password);
         if($result){

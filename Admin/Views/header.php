@@ -64,7 +64,7 @@
                             </div>
                         </div>
                         <div class="title-order">
-                                <h1>Trang Quản lý Live For Food</h1>
+                                <h1>Trang Quản lý SHOP MỸ PHẨM</h1>
                             </div>
                     </div>
 <?php } ?>

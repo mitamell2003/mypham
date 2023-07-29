@@ -1,5 +1,6 @@
 <?php
     class Logout {
+        // hàm đăng xuất
         public function index(){
             if(isset($_SESSION['user']) && isset($_POST['logout'])){
                 echo json_encode(array('status' => 'success', 'message' => 'Đăng xuất thành công'));

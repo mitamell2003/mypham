@@ -9,13 +9,13 @@ $row = $data[0]->fetch_assoc();
             </div>
             <div class="details-content ">
                 <div class="details-name-product ">
-                    <h3>Bánh mì thịt chả</h3>
+                    <h3><?php echo $row["name"] ?></h3>
                 </div>
                 <div class="price-details ">
-                    <span>Giá: 20.000đ</span>
+                    <span>Giá: <?php echo number_format($row["price"]) ?>đ</span>
                 </div>
                 <div class="detail-description ">
-                    <p>bánh mì siêu ngon dùng trong bữa ăn sáng hoặc chiều</p>
+                    <p><?php echo $row["description"] ?></p>
                 </div>
                 <div class="detail-buy">
                     <div class="details-addCart">

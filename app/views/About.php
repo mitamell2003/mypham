@@ -1,39 +1,51 @@
-<div class="container-game">
-    <div class="game">
-        <div class="table">
-            <div class="name-game">
-                <h3>Bạn có muốn vào trò chơi không?</h3>
-            </div>
-            <div class="btn">
-                <div class="yes">
-                    <button onmouseover="yes(this)" onclick= "play(this)">Có</button>
-                </div>
-                <div class="no">
-                    <button onclick="alert('Bạn đã thoát trò chơi')">Không</button>
-                </div>
-            </div>
-        </div>
+
+<section class="about-us">
+  <div class="container-about">
+    <div class="content">
+      <article>
+        <h2>Về chúng tôi</h2>
+        <p>
+          Live for Food là một chuỗi cửa hàng thức ăn nhanh đang rất phổ biến
+          trên khắp thế giới. Các cửa hàng này chuyên cung cấp các món ăn nhanh
+          với chất lượng tốt và giá cả phải chăng.
+        </p>
+        <p>
+          Tại Live for Food, khách hàng có thể tìm thấy đa dạng các loại thức ăn
+          như bánh mì kẹp, burger, khoai tây chiên, salad, sandwich, pizza và
+          các loại đồ uống như nước ép trái cây, trà, cà phê, soda,...
+        </p>
+        <a href="#" title="Giới thiệu">Xem thêm</a>
+      </article>
     </div>
-</div>
-<script>
-     var count = 0;
-    function yes(e){  
-        var y = Math.floor(Math.random() * 400) + 200;
-        var x = Math.floor(Math.random() * 500) + 100;
-        e.style.transform = "translate("+ x +"px, "+ y +"px)";
-        e.style.transition = "all .1s ease";
-    }
-    function play(e){
-       
-       
-        console.log(count);
-        if(count >= 1){
-            e.style.width = "80%";
-            e.innerHTML = "Không chơi được mà còn bấm";
-        }else{
-            e.innerHTML = "Không";
-            count++;
-           
-        }
-    }
-</script>
+    <div id="img">
+      <div class="container-img">
+        <div class="imgs item1">
+          <div class="circle"></div>
+        </div>
+        <div class="imgs item2">
+          <figure>
+            <img
+              class="images"
+              src="https://cdn-icons-png.flaticon.com/256/11465/11465806.png"
+              alt=""
+              loading="lazy"
+            />
+          </figure>
+        </div>
+        <div class="imgs item3">
+          <figure>
+            <img
+              class="images"
+              src="https://cdn-icons-png.flaticon.com/256/5154/5154652.png"
+              alt=""
+              loading="lazy"
+            />
+          </figure>
+        </div>
+        <div class="imgs item4">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

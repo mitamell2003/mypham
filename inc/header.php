@@ -11,6 +11,10 @@
             echo ucfirst($title);
             } ?>
     </title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a15d12341b.js" crossorigin="anonymous"></script>
     <link data-default-icon="https://static.xx.fbcdn.net/rsrc.php/yD/r/d4ZIVX-5C-b.ico" data-badged-icon="https://static.xx.fbcdn.net/rsrc.php/ye/r/Ta8_J_nYekI.ico" rel="shortcut icon" href="https://static.xx.fbcdn.net/rsrc.php/yD/r/d4ZIVX-5C-b.ico">
     <link rel="stylesheet" href="/public/css/app.css"  />
     <link rel="stylesheet" href="<?php echo "/public/css/$title.css";?>"  />
@@ -30,7 +34,7 @@
     <?php require_once __DIR__ . '/../configs/scripts.php'; ?>
   </head>
   <body>
-    <div class="top">
+    <!-- <div class="top">
       <div class="container top-bar">
         <div class="item-top">
           <a href="/" title="Chi nhánh">
@@ -51,18 +55,18 @@
           </a>
         </div>
       </div>
-    </div>
+    </div> -->
     <header>
       <div class="container-header">
         <div class="header-nav">
           <div id="logo">
-            <h2 title="LFF">Live For Food</h2>
+            <img src="/public/images/logo1.png"  height="70" alt="">
           </div>
           <nav>
             <ul>
               <li><a href="/" title="Trang chủ">Trang chủ</a></li>
-              <li><a href="/About" title="Giới thiệu">Trò chơi</a></li>
-              <li><a href="/Menu/page/" title="Thực đơn">Thực đơn</a></li>
+              <li><a href="/About" title="Giới thiệu">Giới thiệu</a></li>
+              <li><a href="/Menu/page/" title="Thực đơn">Sản phẩm</a></li>
               <?php if(isset($_SESSION['user'])){ ?>
               <li class="cart"><a href="/Cart" title="Giỏ hàng">Giỏ hàng</a>
                 <span class="count-cart"> <?php echo count($_SESSION['cart']); ?></span>

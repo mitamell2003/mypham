@@ -66,7 +66,7 @@ main{
 }
 .img-category{
     padding: 4px;
-    background: rgb(169, 202, 230);
+    background: rgb(255, 255, 255);
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -75,6 +75,7 @@ main{
     margin-bottom: 10px;
     position: relative;
     transition: transform ease 0.4s ;
+    border: 1px solid rgba(0, 0, 0, 0.5);
 }
 .img-category:hover{
     transform: translateY(-10px) ;

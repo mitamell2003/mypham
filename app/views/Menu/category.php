@@ -8,7 +8,7 @@
                 <a href="/Menu/page/"
                   ><span class="img-category"
                     ><img
-                      src="https://www.lotteria.vn/media/catalog/tmp/category/Promotion-01_1.jpg"
+                      src="https://cdn-icons-png.flaticon.com/256/11465/11465806.png"
                       alt="" /></span
                   ><span class="name-category">Tất cả</span></a
                 >

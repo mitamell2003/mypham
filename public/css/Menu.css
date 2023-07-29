@@ -182,7 +182,7 @@ main{
 .add-to-cart button{
     padding: 10px 32px;
     border: none;
-    background-color: #E97777;
+    background-color: #717171;
     color: #fff;
     font-size: 14px;
     font-weight: 600;
@@ -191,7 +191,7 @@ main{
     transition: all ease 0.4s;
 }
 .add-to-cart button:hover{
-    background-color: #FF9494;
+    background-color: rgb(45, 45, 45);
 }
 @media only screen and (max-width: 1024px){
     .item-product{
@@ -232,13 +232,13 @@ main{
   margin-left: .5%;
 }
 .container-pagination a:hover:not(.active){
-  background-color: #addd00;
+  background-color: #1e1e1e;
   color: #fff;
   transform: translateY(-5px) scale(1.2);
 }
 
 .container-pagination a.active{
-  background-color: #addd00;
+  background-color: #1e1e1e;
   color: #fff;
 }
 

@@ -37,7 +37,7 @@ class Login extends baseController{
             // khởi tạo phiên đăng nhập
             $_SESSION['user'] = $__user;
             $_SESSION['cart'] = $__cart;
-            echo '<script>alert("Đăng nhập thành công"); location.href="/";</script>';
+            echo '<script>location.href="/";</script>';
         }
         else{
             echo "<script>alert('Sai tên đăng nhập hoặc mật khẩu')</script>";

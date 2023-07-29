@@ -41,7 +41,7 @@ class Cart extends baseController
             }
             $_SESSION["cart"] = [];
             unset($_SESSION["totalPrice"]);
-            echo '<script>location.href="/";</script>';
+            echo '<script>location.href="/Order";</script>';
 
         }
     }
